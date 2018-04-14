@@ -13,6 +13,7 @@ public class MyLinkedList {
 		IntNode newNode = new IntNode(value);
 		
 		if(headNode==null) {
+			System.out.println("Adding "+value+" as head..");
 			headNode=newNode;
 			tailNode=headNode;
 			size++;
@@ -23,6 +24,7 @@ public class MyLinkedList {
 				node=node.getNextNode();
 			}
 			node.setNextNode(newNode);
+			System.out.println("Adding "+value+" at end");
 			tailNode=newNode;
 			size++;
 		}
@@ -32,12 +34,22 @@ public class MyLinkedList {
 	public void addNodeAtFront(int value) {
 		IntNode newNode = new IntNode(value);
 		if(headNode==null) {
+			System.out.println("Adding "+value+" as head..");
 			headNode=newNode;
+			tailNode=headNode;
+			size++;
 		}else {
 			newNode.setNextNode(headNode);
+			System.out.println("Adding "+value+" at front");
 			headNode=newNode;
 			size++;
 		}
+		
+	}
+	
+	
+	public void addNodeAtEnd(int value) {
+		add(value);
 		
 	}
 	
